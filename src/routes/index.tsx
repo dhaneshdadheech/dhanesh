@@ -221,7 +221,7 @@ function Index() {
         <p className="mt-6 text-muted-foreground">Based in Irvine, CA</p>
       </Section>
 
-      <footer className="border-t py-8 text-center text-sm text-muted-foreground">© 2026 Dhanesh Dadheech</footer>
+      <footer className="border-t py-8 text-center text-sm text-muted-foreground">© 2026 Dhanesh Dadheech. Built with ♥ and plenty of coffee.</footer>
     </main>
   );
 }
