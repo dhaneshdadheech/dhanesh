@@ -22,7 +22,7 @@ function Typer() {
   const [n, setN] = useState(0);
   const [del, setDel] = useState(false);
   useEffect(() => {
-    const w = words[i];
+    const w = words[i] ?? "";
     const t = setTimeout(() => {
       if (!del && n < w.length) setN(n + 1);
       else if (!del) setDel(true);
@@ -31,7 +31,7 @@ function Typer() {
     }, !del && n === w.length ? 1400 : del ? 40 : 80);
     return () => clearTimeout(t);
   }, [n, del, i]);
-  return <span className="text-primary">{words[i].slice(0, n)}<span className="caret" /></span>;
+  return <span className="text-primary">{(words[i] ?? "").slice(0, n)}<span className="caret" /></span>;
 }
 
 const stats = [
