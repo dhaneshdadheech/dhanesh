@@ -42,7 +42,7 @@ function PopName() {
     const x = ev.clientX - r.left, y = ev.clientY - r.top, base = Date.now();
     const next = Array.from({ length: 12 }, (_, k) => {
       const a = (Math.PI * 2 * k) / 12;
-      return { id: base + k, x, y, e: items[k % items.length], dx: Math.cos(a) * 120, dy: Math.sin(a) * 120 };
+      return { id: base + k, x, y, e: items[k % items.length] ?? "✨", dx: Math.cos(a) * 120, dy: Math.sin(a) * 120 };
     });
     setPops((p) => [...p, ...next]);
     setTimeout(() => setPops((p) => p.filter((q) => q.id < base || q.id > base + 11)), 1000);
