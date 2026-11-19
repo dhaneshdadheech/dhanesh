@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Deployment
+
+- GitHub Actions builds the GitHub Pages site at `/dhanesh/` and deploys the prerendered static client as `dist`; other builds stay at `/` so the Lovable site keeps working.
+
