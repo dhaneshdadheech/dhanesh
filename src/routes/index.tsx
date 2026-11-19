@@ -34,6 +34,36 @@ function Typer() {
   return <span className="text-primary">{(words[i] ?? "").slice(0, n)}<span className="caret" /></span>;
 }
 
+function PopName() {
+  const [pops, setPops] = useState<{ id: number; x: number; y: number; e: string; dx: number; dy: number }[]>([]);
+  const items = ["✨", "📊", "💡", "⭐", "🎉", "📈", "💛", "🚀"];
+  const burst = (ev: React.MouseEvent<HTMLHeadingElement>) => {
+    const r = ev.currentTarget.getBoundingClientRect();
+    const x = ev.clientX - r.left, y = ev.clientY - r.top, base = Date.now();
+    const next = Array.from({ length: 12 }, (_, k) => {
+      const a = (Math.PI * 2 * k) / 12;
+      return { id: base + k, x, y, e: items[k % items.length], dx: Math.cos(a) * 120, dy: Math.sin(a) * 120 };
+    });
+    setPops((p) => [...p, ...next]);
+    setTimeout(() => setPops((p) => p.filter((q) => q.id < base || q.id > base + 11)), 1000);
+  };
+  return (
+    <h1 onClick={burst} title="Click me!" className="relative mt-2 cursor-pointer select-none text-6xl leading-none md:text-8xl">
+      <span className="name-gradient">Dhanesh Dadheech</span>
+      {pops.map((p) => (
+        <span key={p.id} className="pop-item" style={{ left: p.x, top: p.y, ["--dx" as string]: `${p.dx}px`, ["--dy" as string]: `${p.dy}px` }}>{p.e}</span>
+      ))}
+    </h1>
+  );
+}
+
+const dashboards = [
+  { title: "Localization Vendor Spend", wb: "APPLE_17942762656270", sheet: "LocalizationVendorSpendSyntheticData_" },
+  { title: "By Country", wb: "Book2_17684839671070", sheet: "Bycountry" },
+  { title: "Dashboard View", wb: "Book1_17632796544840", sheet: "Dashview" },
+];
+const TABLEAU = "https://public.tableau.com/app/profile/dhanesh.dadheech1110";
+
 const stats = [
   ["92%", "Detection accuracy (YOLO)"],
   ["15%", "Engagement lift delivered"],
@@ -60,7 +90,7 @@ const skills: [string, string[]][] = [
 
 function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="mx-auto max-w-5xl px-6 py-20">
+    <section id={id} className="relative z-0 mx-auto max-w-5xl px-6 py-20">
       <p className="eyebrow">{eyebrow}</p>
       <h2 className="mt-3 text-4xl md:text-5xl">{title}</h2>
       <div className="mt-10">{children}</div>
@@ -75,7 +105,7 @@ function Index() {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <a href="#" className="font-display text-xl">Dhanesh<span className="text-primary">.</span></a>
           <div className="hidden gap-6 text-sm text-muted-foreground sm:flex">
-            {["about", "experience", "projects", "skills", "contact"].map((s) => (
+            {["about", "experience", "projects", "dashboards", "skills", "contact"].map((s) => (
               <a key={s} href={`#${s}`} className="capitalize hover:text-foreground">{s}</a>
             ))}
           </div>
@@ -84,7 +114,7 @@ function Index() {
 
       <header className="mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6">
         <p className="text-lg text-muted-foreground">Hello, I’m</p>
-        <h1 className="mt-2 text-6xl leading-none md:text-8xl">Dhanesh Dadheech</h1>
+        <PopName />
         <p className="mt-6 text-lg text-muted-foreground">
           Business Analytics <span className="text-primary">|</span> Data <span className="text-primary">|</span> Machine Learning <span className="text-primary">|</span> Team Lead
         </p>
@@ -141,6 +171,21 @@ function Index() {
         </article>
       </Section>
 
+      <Section id="dashboards" eyebrow="Tableau Public" title="Dashboards I’ve built.">
+        <div className="grid gap-6 md:grid-cols-3">
+          {dashboards.map((d) => (
+            <a key={d.wb} href={`${TABLEAU}/viz/${d.wb}/${d.sheet}`} target="_blank" rel="noopener noreferrer" className="group overflow-hidden rounded-xl border bg-card transition hover:-translate-y-1 hover:shadow-lg">
+              <img src={`https://public.tableau.com/static/images/${d.wb.slice(0, 2)}/${d.wb}/${d.sheet}/1.png`} alt={`${d.title} Tableau dashboard`} loading="lazy" className="aspect-[4/3] w-full bg-secondary object-cover" />
+              <div className="p-5">
+                <h3 className="text-xl group-hover:text-primary">{d.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">View on Tableau Public ↗</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a href={`${TABLEAU}/vizzes`} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-full border px-6 py-3 font-semibold hover:bg-secondary">See all dashboards ↗</a>
+      </Section>
+
       <Section id="skills" eyebrow="Toolkit" title="Skills & education.">
         <div className="grid gap-10 md:grid-cols-2">
           <div className="space-y-6">
@@ -170,8 +215,8 @@ function Index() {
 
       <Section id="contact" eyebrow="Say hello" title="Let’s talk data.">
         <div className="flex flex-wrap gap-3">
-          <a href="mailto:ddadheechdhanesh@gmail.com" className="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground">ddadheechdhanesh@gmail.com</a>
-          <a href="https://linkedin.com/in/dhaneshh" target="_blank" rel="noreferrer" className="rounded-full border px-6 py-3 font-semibold hover:bg-secondary">LinkedIn ↗</a>
+          <a href="mailto:ddadheechdhanesh@gmail.com" target="_top" className="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground">ddadheechdhanesh@gmail.com</a>
+          <a href="https://www.linkedin.com/in/dhaneshh/" target="_blank" rel="noopener noreferrer" className="rounded-full border px-6 py-3 font-semibold hover:bg-secondary">LinkedIn ↗</a>
         </div>
         <p className="mt-6 text-muted-foreground">Based in Irvine, CA</p>
       </Section>
