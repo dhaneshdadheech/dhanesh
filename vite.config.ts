@@ -14,7 +14,7 @@ const gitHubPagesBase = "/dhanesh/";
 export default defineConfig({
   vite: {
     // GitHub Pages serves this project from /dhanesh/; Lovable stays at /.
-    base: process.env.GITHUB_ACTIONS === "true" ? gitHubPagesBase : "/",
+    base: process.env["GITHUB_ACTIONS"] === "true" ? gitHubPagesBase : "/",
   },
   tanstackStart: {
     // Render the public home page to static HTML for GitHub Pages.
