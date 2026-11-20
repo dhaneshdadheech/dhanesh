@@ -1,8 +1,6 @@
 # Dhanesh
 
-Can you access this website, if yes then note it we are gonna build a website for me like this: https://sanjana1311.github.io/
 
-This project was built with [Lovable](https://lovable.dev).
 
 **Live app**: https://dhanesh.lovable.app
 
