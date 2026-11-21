@@ -161,6 +161,29 @@
           <a href="https://www.linkedin.com/in/dhaneshh/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn ↗</a>
         </div>
         <p class="muted based">Based in Irvine, CA</p>
+
+        <form id="contact-form" class="card contact-form" novalidate>
+          <h3>Send me a message</h3>
+          <p class="muted small">Recruiters, collaborators, or just saying hi. I’ll reply by email.</p>
+          <div class="form-row">
+            <label>Name
+              <input type="text" name="name" required maxlength="100" autocomplete="name" />
+            </label>
+            <label>Email
+              <input type="email" name="email" required maxlength="150" autocomplete="email" />
+            </label>
+          </div>
+          <label>Company <span class="muted">(optional)</span>
+            <input type="text" name="company" maxlength="100" autocomplete="organization" />
+          </label>
+          <label>Message
+            <textarea name="message" required rows="5" maxlength="5000"></textarea>
+          </label>
+          <!-- Spam trap: hidden from people, bots fill it in -->
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 

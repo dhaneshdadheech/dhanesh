@@ -62,3 +62,48 @@
     grid.appendChild(a);
   }
 })();
+
+// Contact form
+// Messages are sent through FormSubmit (https://formsubmit.co), which emails them to the
+// address below. No account needed; the first submission sends a one-time "Activate Form"
+// email that must be clicked before messages are delivered.
+const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/ddadheechdhanesh@gmail.com";
+
+(function contactForm() {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const button = form.querySelector("button");
+  const setStatus = (msg, kind) => { status.textContent = msg; status.className = "form-status " + (kind || ""); };
+
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const data = new FormData(form);
+    if (data.get("_honey")) return; // spam bot
+
+    data.append("_subject", "Portfolio message from " + data.get("name"));
+    data.append("_template", "table");
+    data.append("_captcha", "false");
+
+    button.disabled = true;
+    setStatus("Sending…");
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && String(json.success) === "true") {
+        form.reset();
+        setStatus("Thanks! Your message was sent. I’ll get back to you soon.", "ok");
+      } else {
+        setStatus("Sorry, the message couldn’t be sent right now. Please email me at ddadheechdhanesh@gmail.com.", "err");
+      }
+    } catch {
+      setStatus("Couldn’t send. Check your connection, or email me at ddadheechdhanesh@gmail.com.", "err");
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
