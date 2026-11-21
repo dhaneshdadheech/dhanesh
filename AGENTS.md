@@ -31,5 +31,5 @@ use the editor.
 
 ## Deployment
 
-- GitHub Actions builds the GitHub Pages site at `/dhanesh/` and deploys the prerendered static client as `dist`; other builds stay at `/` so the Lovable site keeps working.
+- GitHub Pages serves the plain HTML/CSS/JS site in `static-site/` as-is (no build step). The Lovable app under `src/` is no longer deployed there.
 
