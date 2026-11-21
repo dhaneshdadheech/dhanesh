@@ -20,9 +20,10 @@
   <main>
     <nav class="nav">
       <div class="container nav-inner">
-        <a href="#" class="logo">Dhanesh<span class="primary">.</span></a>
+        <a href="#" class="logo">Dhanesh’s Portfolio<span class="primary">.</span></a>
         <div class="nav-links">
           <a href="#about">About</a>
+          <a href="#education">Education</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#dashboards">Dashboards</a>
@@ -58,6 +59,34 @@
         </div>
       </div>
     </section>
+
+    <div class="soft-band">
+      <section id="education" class="container section">
+        <p class="eyebrow">Education</p>
+        <h2>Where I’ve studied.</h2>
+        <div class="section-body edu-grid">
+          <article class="edu-card edu-current">
+            <div class="edu-top">
+              <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg></span>
+              <span class="badge">Currently pursuing</span>
+            </div>
+            <p class="edu-dates">Aug 2026 – Expected 2027</p>
+            <h3>Master of Science in Business Analytics</h3>
+            <p class="edu-school">University of California, Irvine</p>
+            <p class="muted">The Paul Merage School of Business</p>
+          </article>
+          <article class="edu-card">
+            <div class="edu-top">
+              <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg></span>
+              <span class="badge badge-done">Completed</span>
+            </div>
+            <p class="edu-dates">2021 – 2025</p>
+            <h3>Bachelor of Technology in Computer Science</h3>
+            <p class="edu-school">Techno India University</p>
+          </article>
+        </div>
+      </section>
+    </div>
 
     <div class="ink-band">
       <section id="experience" class="container section">
@@ -121,34 +150,10 @@
 
     <section id="skills" class="container section">
       <p class="eyebrow">Toolkit</p>
-      <h2>Skills &amp; education.</h2>
-      <div class="section-body grid-2">
-        <div class="stack">
-          <div>
-            <p class="bold">Programming</p>
-            <div class="chips"><span class="chip">Python (pandas, scikit-learn)</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Java</span></div>
-          </div>
-          <div>
-            <p class="bold">Analytics &amp; BI</p>
-            <div class="chips"><span class="chip">Data Analysis</span><span class="chip">Data Visualization</span><span class="chip">Dashboards</span><span class="chip">Statistics</span><span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">SPSS</span><span class="chip">MATLAB</span></div>
-          </div>
-          <div>
-            <p class="bold">AI &amp; ML</p>
-            <div class="chips"><span class="chip">Machine Learning</span><span class="chip">Generative AI</span></div>
-          </div>
-        </div>
-        <div class="stack-sm">
-          <div class="edu">
-            <p class="muted small">Aug 2026 – Expected 2027</p>
-            <h3>MS Business Analytics</h3>
-            <p class="muted">UC Irvine, Paul Merage School of Business</p>
-          </div>
-          <div class="edu">
-            <p class="muted small">2021 – 2025</p>
-            <h3>B.Tech Computer Science</h3>
-            <p class="muted">Techno India University</p>
-          </div>
-        </div>
+      <h2>My skills.</h2>
+      <div class="section-body">
+        <div id="skill-filters" class="skill-filters" role="group" aria-label="Filter skills by category"></div>
+        <div id="skill-grid" class="skill-grid"></div>
       </div>
     </section>
 
