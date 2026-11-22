@@ -29,7 +29,7 @@
       document.documentElement.classList.add("js");
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=10" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -240,6 +240,31 @@
           <p class="eyebrow"><span>04</span> Projects</p>
           <h2>Things I’ve <em>built.</em></h2>
         </div>
+        <div class="projects">
+        <article class="card spot project-feature reveal">
+          <a class="project-shot" href="https://uci-study-spots.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Anteater Study Spots live demo">
+            <img src="img/anteater-study-spots.jpg?v=1" alt="Anteater Study Spots app showing its UC Irvine campus study planner" loading="lazy" width="1400" height="875" />
+          </a>
+          <div class="project-body">
+            <p class="mini-label">Full-stack web app · Personal project</p>
+            <h3>Anteater Study Spots</h3>
+            <p class="muted">A UC Irvine campus companion: find a place to study, plan a focused session around what’s actually open, track Canvas due dates, and catch the next OCTA bus.</p>
+            <ul class="feature-list">
+              <li><strong>Lock-In Mode</strong> builds a study plan around open spots, with walking time and a food break, then runs a focus timer with ambient sound and streaks.</li>
+              <li><strong>Canvas</strong> calendar sync shows every due date and breaks assignments into steps.</li>
+              <li><strong>Campus map</strong> with live hours, weather, walking navigation, nearby food and a 3D fly-through of campus.</li>
+              <li><strong>Transit</strong>: live OCTA bus positions, departures, nearest stop and a “leave by” suggestion.</li>
+            </ul>
+            <div class="tags">
+              <span>JavaScript</span><span>Python</span><span>REST APIs</span><span>GTFS-Realtime</span><span>Leaflet</span><span>MapLibre GL</span><span>Docker</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://uci-study-spots.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a href="https://github.com/dhaneshdadheech/uci-study-spots" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Source code ↗</a>
+            </div>
+          </div>
+        </article>
+
         <article class="card spot project reveal">
           <div class="project-main">
             <p class="mini-label">Computer Vision · Team Lead</p>
@@ -255,6 +280,7 @@
             <div><p class="metric">End-to-end</p><p class="muted small">data → deployment</p></div>
           </div>
         </article>
+        </div>
       </div>
     </section>
 
@@ -372,6 +398,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
