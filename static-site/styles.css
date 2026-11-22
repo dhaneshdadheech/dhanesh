@@ -201,6 +201,7 @@ kbd {
 .btn-ghost { border-color: var(--border-strong); background: color-mix(in oklch, var(--card) 60%, transparent); backdrop-filter: blur(8px); }
 .btn-ghost:hover { border-color: var(--fg); }
 .btn-block { width: 100%; }
+.btn-resume:hover svg { transform: translateY(2px); }
 .btn[disabled] { opacity: 0.6; cursor: wait; }
 
 /* ==========================================================================
@@ -429,6 +430,11 @@ kbd {
 .project-body { padding: 2rem; display: flex; flex-direction: column; }
 @media (min-width: 768px) { .project-body { padding: 2.5rem; } }
 .project-body h3 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.6rem); margin: 0.75rem 0 0.9rem; }
+.built-with {
+  display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 1rem; padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm); background: var(--primary-soft); font-size: 0.9rem; line-height: 1.5;
+}
+.built-with svg { width: 1.05rem; height: 1.05rem; margin-top: 0.15rem; fill: none; stroke: var(--primary); stroke-width: 1.8; stroke-linejoin: round; }
 .feature-list { list-style: none; padding: 0; margin-top: 1.25rem; display: grid; gap: 0.6rem; font-size: 0.95rem; color: var(--muted); }
 .feature-list li { position: relative; padding-left: 1.25rem; }
 .feature-list li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 0.45rem; height: 2px; background: var(--primary); border-radius: 2px; }
