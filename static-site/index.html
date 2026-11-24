@@ -29,7 +29,7 @@
       document.documentElement.classList.add("js");
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=14" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -62,7 +62,6 @@
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#dashboards">Dashboards</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -85,7 +84,6 @@
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#dashboards">Dashboards</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -250,7 +248,7 @@
             <p class="mini-label">Full-stack web app · Vibe coded</p>
             <h3>Anteater Study Spots</h3>
             <p class="muted">A UC Irvine campus companion: find a place to study, plan a focused session around what’s actually open, track Canvas due dates, and catch the next OCTA bus.</p>
-            <p class="built-with"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z"/></svg>Vibe coded with <strong>Claude</strong> in <strong>VS Code</strong>: I directed the product, features and design and used AI to write the code, then pushed it to GitHub and made it live.</p>
+            <p class="built-with"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z"/></svg><span>Vibe coded with <strong>Claude</strong> in <strong>VS Code</strong>: I directed the product, features and design and used AI to write the code, then pushed it to GitHub and made it live.</span></p>
             <ul class="feature-list">
               <li><strong>Lock-In Mode</strong> builds a study plan around open spots, with walking time and a food break, then runs a focus timer with ambient sound and streaks.</li>
               <li><strong>Canvas</strong> calendar sync shows every due date and breaks assignments into steps.</li>
@@ -267,32 +265,13 @@
           </div>
         </article>
 
-        <article class="card spot project reveal">
-          <div class="project-main">
-            <p class="mini-label">Computer Vision · Team Lead</p>
-            <h3>Real-Time Weapon Detection System</h3>
-            <p class="muted">Led a team of 4 to design and deploy a real-time object detection system using YOLO, reaching 92% detection accuracy. Owned the full workflow: dataset preparation, training, testing and deployment.</p>
-            <div class="tags">
-              <span>YOLO</span><span>Python</span><span>Object Detection</span><span>Deployment</span>
-            </div>
-          </div>
-          <div class="project-metrics" aria-label="Project results">
-            <div><p class="metric">92%</p><p class="muted small">detection accuracy</p></div>
-            <div><p class="metric">4</p><p class="muted small">person team led</p></div>
-            <div><p class="metric">End-to-end</p><p class="muted small">data → deployment</p></div>
-          </div>
-        </article>
         </div>
-      </div>
-    </section>
 
-    <!-- Dashboards -->
-    <section id="dashboards" class="section band">
-      <div class="container">
-        <div class="section-head section-head-row reveal">
+        <div class="subsection-head reveal" id="dashboards">
           <div>
-            <p class="eyebrow"><span>05</span> Tableau Public</p>
-            <h2>Dashboards I’ve <em>built.</em></h2>
+            <p class="mini-label">Tableau Public</p>
+            <h3>Interactive dashboards</h3>
+            <p class="muted">BI dashboards built in Tableau. Click any one to explore it live.</p>
           </div>
           <a href="https://public.tableau.com/app/profile/dhanesh.dadheech1110/vizzes" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">See all dashboards ↗</a>
         </div>
@@ -304,7 +283,7 @@
     <section id="skills" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow"><span>06</span> Toolkit</p>
+          <p class="eyebrow"><span>05</span> Toolkit</p>
           <h2>My <em>skills.</em></h2>
         </div>
         <div id="skill-filters" class="skill-filters reveal" role="group" aria-label="Filter skills by category"></div>
@@ -316,7 +295,7 @@
     <section id="contact" class="section band">
       <div class="container contact">
         <div class="contact-intro reveal">
-          <p class="eyebrow"><span>07</span> Say hello</p>
+          <p class="eyebrow"><span>06</span> Say hello</p>
           <h2>Let’s talk <em>data.</em></h2>
           <p class="muted lead">Recruiters, collaborators, or just saying hi. Send a message and I’ll reply by email.</p>
           <div class="contact-links">
@@ -406,6 +385,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

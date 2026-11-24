@@ -270,7 +270,7 @@ $("#copy-email").addEventListener("click", copyEmail);
     { label: "Education", group: "Section", run: go("education") },
     { label: "Experience", group: "Section", run: go("experience") },
     { label: "Projects", group: "Section", run: go("projects") },
-    { label: "Dashboards", group: "Section", run: go("dashboards") },
+    { label: "Tableau dashboards", group: "Section", run: go("dashboards") },
     { label: "Skills", group: "Section", run: go("skills") },
     { label: "Contact", group: "Section", run: go("contact") },
     { label: "Send me a message", group: "Action", run: () => { go("contact")(); setTimeout(() => $("#f-name").focus({ preventScroll: true }), 500); } },
