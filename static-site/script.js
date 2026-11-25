@@ -278,7 +278,8 @@ $("#copy-email").addEventListener("click", copyEmail);
     { label: "Copy email address", group: "Action", run: copyEmail },
     { label: "Toggle light / dark mode", group: "Action", run: toggleTheme },
     { label: "Open Anteater Study Spots (live app)", group: "Project", run: () => window.open("https://uci-study-spots.onrender.com/", "_blank", "noopener") },
-    { label: "Open LinkedIn", group: "Link", run: () => window.open("https://www.linkedin.com/in/dhaneshh/", "_blank", "noopener") },
+    { label: "Open GitHub", group: "Link", run: () => window.open("https://github.com/dhaneshdadheech", "_blank", "noopener") },
+    { label: "Open LinkedIn", group: "Link", run: () => window.open("https://www.linkedin.com/in/dhaneshd6/", "_blank", "noopener") },
     { label: "Open Tableau Public", group: "Link", run: () => window.open("https://public.tableau.com/app/profile/dhanesh.dadheech1110", "_blank", "noopener") },
   ];
   let shown = items, sel = 0, lastFocus = null;
