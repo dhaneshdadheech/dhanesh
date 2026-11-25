@@ -17,7 +17,6 @@ function toast(msg) {
 /* ---------- Theme ---------- */
 function setTheme(next) {
   document.documentElement.setAttribute("data-theme", next);
-  try { localStorage.setItem("theme", next); } catch (e) { /* storage unavailable */ }
 }
 function toggleTheme() {
   const cur = document.documentElement.getAttribute("data-theme");
