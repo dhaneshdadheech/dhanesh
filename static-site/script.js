@@ -274,7 +274,7 @@ $("#copy-email").addEventListener("click", copyEmail);
     { label: "Skills", group: "Section", run: go("skills") },
     { label: "Contact", group: "Section", run: go("contact") },
     { label: "Send me a message", group: "Action", run: () => { go("contact")(); setTimeout(() => $("#f-name").focus({ preventScroll: true }), 500); } },
-    { label: "Download résumé (PDF)", group: "Action", run: () => { const l = document.createElement("a"); l.href = "Dhanesh_Dadheech_Resume.pdf?v=2"; l.download = "Dhanesh_Dadheech_Resume.pdf"; document.body.appendChild(l); l.click(); l.remove(); } },
+    { label: "Download résumé (PDF)", group: "Action", run: () => { const l = document.createElement("a"); l.href = "Dhanesh_Dadheech_Resume.pdf?v=3"; l.download = "Dhanesh_Dadheech_Resume.pdf"; document.body.appendChild(l); l.click(); l.remove(); } },
     { label: "Copy email address", group: "Action", run: copyEmail },
     { label: "Toggle light / dark mode", group: "Action", run: toggleTheme },
     { label: "Open Anteater Study Spots (live app)", group: "Project", run: () => window.open("https://uci-study-spots.onrender.com/", "_blank", "noopener") },
